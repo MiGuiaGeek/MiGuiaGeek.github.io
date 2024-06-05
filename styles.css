@@ -1,0 +1,592 @@
+/* styles.css */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centramos el contenido verticalmente */
+}
+
+.bg {
+    background-color: #e4e4e4;
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+/* Estilos para el encabezado */
+.header {
+    background-color: #283593;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Estilos para el contenedor del menú y formulario */
+.menu {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end; /* Alineamos los elementos a la derecha */
+    align-items: center;
+}
+
+/* Estilos para el menú de navegación */
+.menu nav {
+    text-align: right; /* Alineamos los elementos a la derecha */
+}
+
+.menu nav ul {
+    list-style: none;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin: 0;
+}
+
+.menu nav ul li {
+    display: inline;
+    margin-left: 5px; /* Cambiamos el margen izquierdo para reducir el espacio */
+}
+
+.menu nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 15px; /* Reducimos el espacio alrededor del texto */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    background-color: #364296;
+    position: relative; /* Agregamos posición relativa */
+}
+
+.menu nav ul li a:hover {
+    color: #fff; /* Aseguramos que el color del texto sea blanco al pasar el mouse */
+}
+
+.menu nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #e4e4e4;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* Agregamos una transición para la animación */
+}
+
+.menu nav ul li a:hover::after {
+    width: calc(100% - 25px); /* Ancho completo menos el espacio de relleno */
+}
+
+
+
+/* Buscador */
+.menu-search-container .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+}
+
+.menu-search-container .search-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px; /* Cambiamos el margen derecho para separar los elementos */
+}
+
+/* Estilos para el formulario de búsqueda */
+.search-form {
+    margin-left: 10px; /* Ajusta el margen izquierdo para separarlo de los elementos anteriores */
+}
+
+
+
+/* Estilos del contenido principal */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Título centrado */
+.centered-title {
+    text-align: center;
+    margin-top: 10%;
+    color: #283593;
+}
+
+/* Contenedor del carrusel centrado */
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centramos el carrusel verticalmente */
+    align-items: center;
+    flex-grow: 1; /* Aseguramos que el contenedor crezca para ocupar el espacio disponible */
+}
+
+/* Estilos de la sección de bienvenida */
+#welcome {
+    text-align: center;
+    padding-top: 100px; /* Aumentamos el espacio superior para separar del encabezado */
+    color: #000000; /* Cambiamos el color del texto a blanco para contrastar con el fondo */
+    padding-bottom: 100px;
+    font-weight: bold;
+    font-size: 25px; /* Aumentamos el tamaño del título para que destaque más */
+}
+
+#welcome p {
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Estilos para el contenido principal */
+.container {
+    width: 100%;
+    background-color: #e4e4e4;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+.container section {
+    margin-bottom: 50px;
+}
+
+.container section h2 {
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: #283593;
+    text-align: center;
+    position: relative;
+}
+
+.container section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #283593;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container section p {
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/* Estilos para el contenido principal 2*/
+.container2 {
+    width: 100%;    
+    background-color: #a1bfff;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    text-align: center;
+}
+
+.container2 section {
+    margin-bottom: 50px;
+}
+
+.container2 section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #283593;
+    text-align: center;
+    position: relative;
+}
+
+.container2 section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #283593;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container2 section p {
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/* Estilos para las cuadrículas de artículos */
+.articles-grid,
+.categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.articles-grid .article,
+.categories-grid .category {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.articles-grid .article:hover,
+.categories-grid .category:hover {
+    transform: translateY(-5px);
+}
+
+.articles-grid .article h3,
+.categories-grid .category h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #283593;
+    text-align: center;
+}
+
+.articles-grid .article p,
+.categories-grid .category p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.articles-grid .article a,
+.categories-grid .category a {
+    color: #283593;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #1e88e5;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.articles-grid .article a:hover,
+.categories-grid .category a:hover {
+    background-color: #1565c0;
+    transform: translateY(-3px);
+}
+
+.articles-grid .article img,
+.categories-grid .category img {
+    max-width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.articles-grid .article:hover img,
+.categories-grid .category:hover img {
+    transform: scale(1.1);
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+/* Articulos */
+.article-page {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding-top: 0px;
+}
+
+.article-page p{
+    line-height: 1.4;
+    text-align: left;
+}
+
+.article-page h3 {
+    margin-top: 8%;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Estilos para imágenes */
+.article-img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para el recuadro de código */
+.article-code {
+    position: relative;
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px;
+    margin-top: 10px; /* Aumentamos el espacio superior */
+    background-color: #000000; /* Restauramos el color de fondo original */
+    color: #ffffff; /* Restauramos el color del texto original */
+    border: 2px solid #333;
+    overflow: auto; /* Agrega desplazamiento vertical si el texto es demasiado largo */
+    display: flex; /* Para centrar el texto */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.article-code .code-container {
+    width: 600px;
+    display: flex; /* Para centrar el texto */
+    justify-content: center; /* Ajuste para que el texto no esté centrado */
+    align-items: center; /* Ajuste para que el texto no esté centrado */
+    white-space: pre-wrap; /* Mantener los saltos de línea */
+    margin-bottom: 10px; /* Ajuste de margen inferior */
+}
+
+.article-code code {
+    font-family: Consolas, monospace; /* Fuente Consolas */
+    white-space: pre-wrap; /* Envolver texto */
+}
+
+/* Copy Buton */
+.copy-btn {
+    position: absolute;
+    top: 0px; /* Situamos el botón arriba */
+    right: 0px; /* Situamos el botón a la derecha */
+    background-color: #333; /* Botón negro */
+    color: white; /* Texto blanco */
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 0px solid #7c7c7c;
+}
+
+.copy-btn:hover {
+    background-color: #333; /* Color de botón al pasar el mouse */
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+
+/* Estilos de las cajas de los artículos */
+.blog-container {
+    display: flex; /* Hacemos que los elementos se muestren en línea */
+    flex-wrap: wrap; /* Permitimos que los elementos se envuelvan si no caben en una sola línea */
+    justify-content: center; /* Centramos los elementos horizontalmente */
+}
+
+.blog-box {
+    justify-content: center;
+    width: 300px;
+    background-color: #e4e4e4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px; /* Aumentamos el espacio entre las cajas */
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Añadimos una sombra suave para resaltar las cajas */
+    transition: transform 0.3s ease; /* Agregamos una transición suave al pasar el cursor sobre las cajas */
+}
+
+.blog-box:hover {
+    transform: translateY(-5px); /* Elevamos ligeramente la caja al pasar el cursor sobre ella */
+}
+
+.blog-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.blog-box p {
+    margin-bottom: 20px;
+}
+
+.blog-box a {
+    color: #283593;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #1e88e5;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-box a:hover {
+    background-color: #1565c0;
+}
+
+/* Estilos para el título de la sección de los últimos artículos */
+#blogs h2 {
+    font-size: 26px; /* Aumentamos el tamaño del título para que destaque más */
+    margin-top: 50px;
+    margin-bottom: 10px; /* Aumentamos el espacio inferior para separar del contenido */
+    text-align: left; /* Centramos el texto horizontalmente */
+    color: #283593; /* Cambiamos el color del texto para que sea más llamativo */
+}
+
+/* Sobre Nosotros */
+#about,
+#mission,
+#values {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centramos horizontalmente el contenido */
+    justify-content: center; /* Centramos verticalmente el contenido */
+    text-align: center; /* Centramos horizontalmente el texto */
+    min-height: 70vh; /* Establecemos una altura mínima para asegurar que el contenido sea visible */
+}
+
+#about h2,
+#mission h2,
+#values h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #283593;
+}
+
+#about p,
+#mission p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#values ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#values li {
+    margin-bottom: 15px;
+}
+
+#values li strong {
+    color: #283593;
+}
+
+/* Estilos para el carrusel */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    max-height: 350px;
+    margin: 50px auto; /* Añadido un espacio superior e inferior para centrarlo verticalmente */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.slide {
+    display: none;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Estilos para los botones del carrusel */
+.controls {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Estilos para los botones del carrusel */
+.slide-btn {
+    background-color: #283593;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para el botón activo */
+.slide-btn.active {
+    background-color: #64b5f6; /* Cambia el color de fondo del botón activo a un azul más claro */
+}
+
+.slide-btn:hover {
+    background-color: #64b5f6;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+/* Estilos de la página de contacto */
+#contact {
+    text-align: center; /* Centramos el contenido */
+    margin-top: 50px;
+}
+
+#contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #283593; /* Color azul para el título */
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex; /* Hacemos que los elementos se alineen en una fila */
+    justify-content: center; /* Centramos los elementos horizontalmente */
+    flex-wrap: wrap; /* Permitimos que los elementos se envuelvan si no caben en una línea */
+}
+
+#contact form label {
+    flex: 1 0 100%; /* Ocupamos todo el ancho disponible */
+    margin-bottom: 10px;
+    text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+#contact form input,
+#contact form textarea {
+    flex: 1 0 100%; /* Ocupamos todo el ancho disponible */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contact form button {
+    background-color: #283593; /* Color azul para el botón */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1 0 100%; /* Ocupamos todo el ancho disponible */
+}
+
+#contact form button:hover {
+    background-color: #1e88e5; /* Color azul más claro al pasar el mouse */
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para el footer */
+.footer {
+    background-color: #283593;
+    color: #ffffff;
+    text-align: center;
+    position:fixed;
+    flex: auto;
+    bottom: 0;
+    max-height: 5%;
+    width: 100%;
+}

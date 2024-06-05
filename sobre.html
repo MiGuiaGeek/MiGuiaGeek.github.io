@@ -1,0 +1,79 @@
+<!-- sobre.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg">
+
+    <header class="header">
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="articulos.html">Articulos</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="sobre.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="controls">
+            <button class="slide-btn" onclick="showSlide(0)" id="btn-history">Historia</button>
+            <button class="slide-btn" onclick="showSlide(1)" id="btn-mission">Misión</button>
+            <button class="slide-btn" onclick="showSlide(2)" id="btn-values">Valores</button>
+        </div>
+        <div class="carousel">
+            <div class="slide" id="about">
+                <h2>Nuestra Historia</h2>
+                <p>Somos un equipo apasionado de entusiastas de la tecnología que se dedica a compartir conocimientos sobre informática a través de nuestro blog. Desde nuestra fundación en 2024, nos hemos comprometido a proporcionar contenido de calidad y relevante que ayude a nuestra comunidad a mantenerse actualizada en un mundo en constante evolución.</p>
+            </div>
+            <div class="slide" id="mission">
+                <h2>Nuestra Misión</h2>
+                <p>Nuestra misión es democratizar el conocimiento tecnológico y hacer que sea accesible para todos. Nos esforzamos por ofrecer contenido educativo, informativo y entretenido que inspire a nuestros lectores a explorar nuevas ideas, adquirir nuevas habilidades y desarrollar su pasión por la informática.</p>
+            </div>
+            <div class="slide" id="values">
+                <h2>Nuestros Valores</h2>
+                <ul>
+                    <li><strong>Compromiso con la Excelencia:</strong> Nos comprometemos a ofrecer contenido de la más alta calidad que cumpla con los más altos estándares de precisión, relevancia y claridad.</li>
+                    <li><strong>Comunidad:</strong> Valoramos y fomentamos la participación activa de nuestra comunidad, creando un espacio inclusivo donde todos puedan aprender, compartir y crecer juntos.</li>
+                    <li><strong>Innovación:</strong> Buscamos constantemente nuevas formas de presentar y explorar temas tecnológicos, manteniéndonos a la vanguardia de las últimas tendencias y avances.</li>
+                    <li><strong>Integridad:</strong> Actuamos con honestidad, transparencia y ética en todas nuestras interacciones, construyendo relaciones de confianza y respeto con nuestros lectores y colaboradores.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Mi Blog Técnico</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(0); // Mostrar el primer slide al cargar la página
+        });
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const buttons = document.querySelectorAll('.slide-btn');
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            slides[n].style.display = 'block';
+            buttons[n].classList.add('active');
+        }
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

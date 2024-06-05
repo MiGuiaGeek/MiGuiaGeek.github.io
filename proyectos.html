@@ -1,0 +1,94 @@
+<!-- proyectos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg">
+
+    <header class="header">
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="articulos.html">Articulos</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="sobre.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="centered-title">¡Trabajamos en ello!</h1>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="slide">
+                    <h2>Creación de Scripts</h2>
+                    <p>Exploraremos cómo crear scripts automatizados para diferentes tareas en diversos lenguajes de programación.</p>
+                </div>
+                <div class="slide">
+                    <h2>Archivos de Configuración Docker</h2>
+                    <p>Aprenderemos a crear y gestionar archivos de configuración para Docker, facilitando la creación de entornos de desarrollo consistentes.</p>
+                </div>
+                <div class="slide">
+                    <h2>Instalación de Aplicaciones</h2>
+                    <p>Guías paso a paso para instalar y configurar aplicaciones esenciales para el desarrollo y la administración de sistemas.</p>
+                </div>
+                <div class="slide">
+                    <h2>Implementación de Base de Datos</h2>
+                    <p>Proyectos que demuestran la implementación y gestión de bases de datos utilizando diferentes tecnologías.</p>
+                </div>
+                <div class="slide">
+                    <h2>Backups</h2>
+                    <p>Metodologías y herramientas para realizar copias de seguridad efectivas y restaurar datos de manera eficiente.</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="slide-btn" onclick="showProjectSlide(0)">1</button>
+                <button class="slide-btn" onclick="showProjectSlide(1)">2</button>
+                <button class="slide-btn" onclick="showProjectSlide(2)">3</button>
+                <button class="slide-btn" onclick="showProjectSlide(3)">4</button>
+                <button class="slide-btn" onclick="showProjectSlide(4)">5</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Mi Blog Técnico</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentProjectSlide = 0;
+        const projectSlides = document.querySelectorAll('.slide');
+        const projectButtons = document.querySelectorAll('.slide-btn');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showProjectSlide(currentProjectSlide);
+            setInterval(nextProjectSlide, 7000); // Cambiar de slide cada 3 segundos
+        });
+
+        function showProjectSlide(n) {
+            projectSlides.forEach((slide, index) => {
+                slide.style.display = index === n ? 'block' : 'none';
+            });
+            projectButtons.forEach((button, index) => {
+                button.classList.toggle('active', index === n);
+            });
+            currentProjectSlide = n;
+        }
+
+        function nextProjectSlide() {
+            currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
+            showProjectSlide(currentProjectSlide);
+        }
+    </script>
+</body>
+</html>
